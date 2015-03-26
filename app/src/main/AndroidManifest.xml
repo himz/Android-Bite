@@ -8,6 +8,14 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
 
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:name="com.sh.helpers.App"
         android:allowBackup="true"
@@ -17,11 +25,23 @@
         <activity
             android:name="com.sh.bite.Launcher"
             android:label="@string/title_activity_launcher" >
+        </activity>
+        <activity
+            android:name="com.sh.bite.StartScreen"
+            android:label="@string/title_activity_launcher" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sh.bite.ChangeRestaurant"
+            android:label="@string/title_activity_change_restaurant"
+            android:parentActivityName="com.sh.bite.StartScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sh.bite.StartScreen" />
         </activity>
     </application>
 
