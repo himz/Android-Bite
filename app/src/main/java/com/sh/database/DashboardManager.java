@@ -33,6 +33,7 @@ public class DashboardManager {
         menuItem.setDishId(1);
         menuItem.setDishName("Huummus Beef");
         menuItem.setPrice(10.95);
+        menuItem.setDishTags("none");
         menuList.add(menuItem);
 
         return menuList;
@@ -43,13 +44,15 @@ public class DashboardManager {
         RestaurantMenu menuItem = new RestaurantMenu();
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Classic");
-        menuItem.setPrice(8.95);
+        menuItem.setDishName("Large Israeli Salad");
+        menuItem.setPrice(9.50);
+        menuItem.setDishTags("none");
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Classic");
-        menuItem.setPrice(8.95);
+        menuItem.setDishName("Oren's Fatush Salad");
+        menuItem.setPrice(10.95);
+        menuItem.setDishTags("none");
         menuList.add(menuItem);
         return menuList;
     }
@@ -58,23 +61,27 @@ public class DashboardManager {
         List<RestaurantMenu> menuList = new ArrayList<RestaurantMenu>();
         RestaurantMenu menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Classic");
+        menuItem.setDishName("Hummus Classic");
         menuItem.setPrice(8.95);
+        menuItem.setDishTags("Vegan, GF");
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Chickpea");
+        menuItem.setDishName("Hummus Chickpea");
+        menuItem.setDishTags("Vegan");
         menuItem.setPrice(9.50);
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Fava");
+        menuItem.setDishName("Hummus Fava");
+        menuItem.setDishTags("Peanut");
         menuItem.setPrice(9.50);
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Mushrooms");
-        menuItem.setPrice(9.95);
+        menuItem.setDishName("Vegetable Skewer");
+        menuItem.setDishTags("Vegetarian, Peanut");
+        menuItem.setPrice(10.50);
         menuList.add(menuItem);
 
         return menuList;

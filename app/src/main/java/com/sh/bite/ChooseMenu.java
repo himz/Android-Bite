@@ -197,12 +197,17 @@ public class ChooseMenu extends Activity implements ActionBar.TabListener {
             if (container == null) {
                 return null;
             }
-
-            View rootView = inflater.inflate(R.layout.fragment_choose_menu, container, false);
+            int sectionNumber = (int)this.getArguments().getInt(ARG_SECTION_NUMBER);
+            View rootView;
+            if(sectionNumber == 3) {
+                rootView = inflater.inflate(R.layout.fragment_choose_menu_full, container, false);
+                return rootView;
+            } else {
+                rootView = inflater.inflate(R.layout.fragment_choose_menu, container, false);
+            }
             List<String> data = new ArrayList<String>();
             List<RestaurantMenu> menuList = new ArrayList<RestaurantMenu>();
-            //phraseList = DashboardManager.getAllPhrase(getActivity().getApplication());
-            int sectionNumber = (int)this.getArguments().getInt(ARG_SECTION_NUMBER);
+
             if(sectionNumber == 1) {
                 menuList = DashboardManager.getDietMenu(getActivity().getApplication());
             } else if (sectionNumber == 2) {

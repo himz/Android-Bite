@@ -49,6 +49,7 @@ public class MenuAdapter extends BaseAdapter {
         View v = convertView;
         TextView tv;
         TextView tvPrice;
+        TextView tvTags;
         final ImageView iv1;
         final ImageView iv2;
         if (v == null) {
@@ -61,6 +62,7 @@ public class MenuAdapter extends BaseAdapter {
             itemMap = new HashMap<Integer, View>();
             tv = (TextView) v.findViewById(android.R.id.text1);
             tvPrice = (TextView) v.findViewById(R.id.textView6);
+            tvTags = (TextView) v.findViewById(R.id.textView8);
             iv1 = (ImageView) v.findViewById(R.id.imageView1);
             iv2 = (ImageView) v.findViewById(R.id.imageView2);
             itemMap.put(android.R.id.text1, tv);
@@ -70,6 +72,7 @@ public class MenuAdapter extends BaseAdapter {
         } else {
             tv = (TextView) itemMap.get(android.R.id.text1);
             tvPrice = (TextView) v.findViewById(R.id.textView6);
+            tvTags = (TextView) v.findViewById(R.id.textView8);
             iv1 = (ImageView) itemMap.get(R.id.imageView1);
             iv2 = (ImageView) itemMap.get(R.id.imageView2);
         }
@@ -79,6 +82,8 @@ public class MenuAdapter extends BaseAdapter {
         tv.setText(item);
         final String price = "$" + String.valueOf(restaurantMenuItem.getPrice());
         tvPrice.setText(price);
+        final String tags =  restaurantMenuItem.getDishTags();
+        tvTags.setText(tags);
         iv1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
