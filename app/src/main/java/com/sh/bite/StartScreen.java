@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.bite.R;
@@ -193,11 +194,21 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
                 app = (App)ctx;
                 TextView txtRestaurant = (TextView)rootView.findViewById(R.id.textView3);
                 txtRestaurant.setText(app.selectedRestaurantName);
+
                 TextView txtChangeRestaurant = (TextView)rootView.findViewById(R.id.textView4);
                 txtChangeRestaurant.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent myintent=new Intent(getActivity(), ChangeRestaurant.class);
+                        startActivity(myintent);
+                    }
+                });
+
+                Button btnShowMenu = (Button) rootView.findViewById(R.id.button);
+                btnShowMenu.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent myintent=new Intent(getActivity(), MyMenuActivity.class);
                         startActivity(myintent);
                     }
                 });

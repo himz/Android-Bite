@@ -47,6 +47,10 @@
             android:name="com.sh.bite.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+        android:name="com.sh.bite.MyMenuActivity"
+        android:label="@string/title_activity_settings" >
+    </activity>
     </application>
 
 </manifest>
