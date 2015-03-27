@@ -31,7 +31,7 @@ public class DashboardManager {
         List<RestaurantMenu> menuList = new ArrayList<RestaurantMenu>();
         RestaurantMenu menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
-        menuItem.setDishName("Huummus Beef");
+        menuItem.setDishName("Hummus Beef");
         menuItem.setPrice(10.95);
         menuItem.setDishTags("none");
         menuList.add(menuItem);
