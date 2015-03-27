@@ -7,6 +7,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.bite.R;
+import com.sh.helpers.App;
 
 public class StartScreen extends Activity implements ActionBar.TabListener {
 
@@ -37,6 +39,7 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    static App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +98,8 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivityForResult(i, 1);
             return true;
         }
 
@@ -184,6 +189,10 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
             View rootView;
             if(sectionNumber == 1){
                 rootView = inflater.inflate(R.layout.fragment_start_screen, container, false);
+                Context ctx = getActivity().getApplicationContext();
+                app = (App)ctx;
+                TextView txtRestaurant = (TextView)rootView.findViewById(R.id.textView3);
+                txtRestaurant.setText(app.selectedRestaurantName);
                 TextView txtChangeRestaurant = (TextView)rootView.findViewById(R.id.textView4);
                 txtChangeRestaurant.setOnClickListener(new View.OnClickListener() {
                     @Override

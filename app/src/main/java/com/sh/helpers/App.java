@@ -16,12 +16,15 @@ import android.content.Context;
 public class App extends Application {
 	/* List of global variables, to be shared across activities */
 	public LocalDbAdapter db;
+    public String selectedRestaurantName = "Oren's Hummus";
 
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		Context ctx = getApplicationContext();
+        selectedRestaurantName = new String();
+        selectedRestaurantName = "Oren's Hummus";
 		this.db = new LocalDbAdapter(ctx);
 		this.db.open();
 	}

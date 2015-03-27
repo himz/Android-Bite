@@ -3,6 +3,7 @@ package com.sh.bite;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,12 +19,13 @@ import android.widget.Toast;
 
 import com.example.bite.R;
 import com.sh.entities.RestaurantByDistance;
+import com.sh.helpers.App;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChangeRestaurant extends Activity {
-
+    static App app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,32 @@ public class ChangeRestaurant extends Activity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_change_restaurant, container, false);
             List<RestaurantByDistance> listData = new ArrayList<RestaurantByDistance>();
+            listData = getRestaurantList();
+            CustomAdapter adapter = new CustomAdapter(this.getActivity(), listData);
+            ListView listView = (ListView) rootView.findViewById(R.id.listView);
+            listView.setAdapter(adapter);
+            Context ctx = getActivity().getApplicationContext();
+            app = (App)ctx;
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> listView, View view,
+                                        int pos, long id) {
+                    TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                    app.selectedRestaurantName = (String) textView.getText();
+                    toast((String) textView.getText());
+
+                }
+            });
+            return rootView;
+        }
+        private void toast(String text) {
+            Toast.makeText(getActivity(),
+                    String.format("Item clicked: %s", text), Toast.LENGTH_SHORT)
+                    .show();
+        }
+
+        private List<RestaurantByDistance> getRestaurantList() {
+            List<RestaurantByDistance> listData = new ArrayList<RestaurantByDistance>();
             RestaurantByDistance listItem = new RestaurantByDistance();
             listItem.setId(1);
             listItem.setDistanceFromCurrentLocation(0.01);
@@ -84,27 +112,26 @@ public class ChangeRestaurant extends Activity {
             listItem.setDistanceFromCurrentLocation(0.6);
             listItem.setName("Sakkoon");
             listData.add(listItem); listItem = new RestaurantByDistance();
-            listItem.setId(2);
+            listItem.setId(4);
             listItem.setDistanceFromCurrentLocation(0.7);
             listItem.setName("Pho");
-            listData.add(listItem); listItem = new RestaurantByDistance();
-            CustomAdapter adapter = new CustomAdapter(this.getActivity(), listData);
-            ListView listView = (ListView) rootView.findViewById(R.id.listView);
-            listView.setAdapter(adapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> listView, View view,
-                                        int pos, long id) {
-                    TextView textView = (TextView) view.findViewById(android.R.id.text1);
-                    toast((String) textView.getText());
-                }
-            });
-            return rootView;
-        }
-        private void toast(String text) {
-            Toast.makeText(getActivity(),
-                    String.format("Item clicked: %s", text), Toast.LENGTH_SHORT)
-                    .show();
+            listData.add(listItem);
+            listItem = new RestaurantByDistance();
+            listItem.setId(5);
+            listItem.setDistanceFromCurrentLocation(0.7);
+            listItem.setName("Xun");
+            listData.add(listItem);
+            listItem = new RestaurantByDistance();
+            listItem.setId(6);
+            listItem.setDistanceFromCurrentLocation(0.8);
+            listItem.setName("Trapioca Express");
+            listData.add(listItem);
+            listItem = new RestaurantByDistance();
+            listItem.setId(7);
+            listItem.setDistanceFromCurrentLocation(0.8);
+            listItem.setName("Verde Tea");
+            listData.add(listItem);
+            return listData;
         }
     }
 }
