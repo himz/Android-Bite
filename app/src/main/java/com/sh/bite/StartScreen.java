@@ -9,6 +9,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -195,7 +196,8 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
                 TextView txtRestaurant = (TextView)rootView.findViewById(R.id.textView3);
                 txtRestaurant.setText(app.selectedRestaurantName);
 
-                TextView txtChangeRestaurant = (TextView)rootView.findViewById(R.id.textView4);
+                TextView txtChangeRestaurant = (TextView)rootView.findViewById(R.id.textView5);
+                txtChangeRestaurant.setPaintFlags(txtChangeRestaurant.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                 txtChangeRestaurant.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

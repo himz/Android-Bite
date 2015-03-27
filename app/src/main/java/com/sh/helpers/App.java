@@ -21,7 +21,7 @@ import java.util.List;
 public class App extends Application {
 	/* List of global variables, to be shared across activities */
 	public LocalDbAdapter db;
-    public String selectedRestaurantName = "Oren's Hummus";
+    public String selectedRestaurantName = "Xanh";
     public List<RestaurantMenu> menuList = new ArrayList<RestaurantMenu>();;
 
 
@@ -30,7 +30,7 @@ public class App extends Application {
 		super.onCreate();
 		Context ctx = getApplicationContext();
         selectedRestaurantName = new String();
-        selectedRestaurantName = "Oren's Hummus";
+        selectedRestaurantName = "Xanh";
         menuList = new ArrayList<RestaurantMenu>();
 		this.db = new LocalDbAdapter(ctx);
 		this.db.open();

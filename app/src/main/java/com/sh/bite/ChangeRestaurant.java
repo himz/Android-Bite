@@ -88,7 +88,7 @@ public class ChangeRestaurant extends Activity {
                                         int pos, long id) {
                     TextView textView = (TextView) view.findViewById(android.R.id.text1);
                     app.selectedRestaurantName = (String) textView.getText();
-                    toast((String) textView.getText());
+//                    toast((String) textView.getText());
 
                 }
             });
@@ -105,11 +105,11 @@ public class ChangeRestaurant extends Activity {
             RestaurantByDistance listItem = new RestaurantByDistance();
             listItem.setId(1);
             listItem.setDistanceFromCurrentLocation(0.01);
-            listItem.setName("Oren's Hummus");
+            listItem.setName("Xanh");
             listData.add(listItem); listItem = new RestaurantByDistance();
             listItem.setId(2);
-            listItem.setDistanceFromCurrentLocation(0.5);
-            listItem.setName("AsianBox");
+            listItem.setDistanceFromCurrentLocation(0.01);
+            listItem.setName("Oren's Hummus Shop");
             listData.add(listItem); listItem = new RestaurantByDistance();
             listItem.setId(3);
             listItem.setDistanceFromCurrentLocation(0.6);
@@ -121,8 +121,8 @@ public class ChangeRestaurant extends Activity {
             listData.add(listItem);
             listItem = new RestaurantByDistance();
             listItem.setId(5);
-            listItem.setDistanceFromCurrentLocation(0.7);
-            listItem.setName("Xun");
+            listItem.setDistanceFromCurrentLocation(0.5);
+            listItem.setName("AsianBox");
             listData.add(listItem);
             listItem = new RestaurantByDistance();
             listItem.setId(6);
