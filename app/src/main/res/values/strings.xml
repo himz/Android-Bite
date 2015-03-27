@@ -9,5 +9,10 @@
     <string name="title_section1">Now</string>
     <string name="title_section2">Explore</string>
     <string name="title_activity_change_restaurant">ChangeRestaurant</string>
-
+    <string name="title_activity_choose_menu">ChooseMenu</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_dish_detail">DishDetail</string>
+    <string name="title_menu_section1">Diet</string>
+    <string name="title_menu_section2">Modify</string>
+    <string name="title_menu_section3">FullMenu</string>
 </resources>

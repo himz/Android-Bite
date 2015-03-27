@@ -48,9 +48,21 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-        android:name="com.sh.bite.MyMenuActivity"
-        android:label="@string/title_activity_settings" >
-    </activity>
+            android:name="com.sh.bite.MyMenuActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.sh.bite.ChooseMenu"
+            android:label="@string/title_activity_choose_menu"
+            android:parentActivityName="com.sh.bite.StartScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sh.bite.StartScreen" />
+        </activity>
+        <activity
+            android:name="com.sh.bite.DishDetailActivity"
+            android:label="@string/title_activity_dish_detail" >
+        </activity>
     </application>
 
 </manifest>

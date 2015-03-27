@@ -1,5 +1,7 @@
 package com.sh.bite;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -18,13 +20,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.bite.R;
+import com.sh.database.DashboardManager;
+import com.sh.database.MenuAdapter;
+import com.sh.entities.RestaurantMenu;
 import com.sh.helpers.App;
 
-public class StartScreen extends Activity implements ActionBar.TabListener {
+public class ChooseMenu extends Activity implements ActionBar.TabListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -45,7 +53,7 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_screen);
+        setContentView(R.layout.activity_choose_menu);
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -86,7 +94,7 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_start_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_choose_menu, menu);
         return true;
     }
 
@@ -99,8 +107,6 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, SettingsActivity.class);
-            startActivityForResult(i, 1);
             return true;
         }
 
@@ -142,7 +148,7 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -150,9 +156,11 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.title_menu_section1).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.title_menu_section2).toUpperCase(l);
+                case 2:
+                    return getString(R.string.title_menu_section3).toUpperCase(l);
             }
             return null;
         }
@@ -186,37 +194,48 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            int sectionNumber = this.getArguments().getInt(ARG_SECTION_NUMBER);
-            View rootView;
-            if(sectionNumber == 1){
-                rootView = inflater.inflate(R.layout.fragment_start_screen, container, false);
-                Context ctx = getActivity().getApplicationContext();
-                app = (App)ctx;
-                TextView txtRestaurant = (TextView)rootView.findViewById(R.id.textView3);
-                txtRestaurant.setText(app.selectedRestaurantName);
-
-                TextView txtChangeRestaurant = (TextView)rootView.findViewById(R.id.textView4);
-                txtChangeRestaurant.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent myintent=new Intent(getActivity(), ChangeRestaurant.class);
-                        startActivity(myintent);
-                    }
-                });
-
-                Button btnShowMenu = (Button) rootView.findViewById(R.id.button);
-                btnShowMenu.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent myintent=new Intent(getActivity(), ChooseMenu.class);
-                        startActivity(myintent);
-                    }
-                });
-
-            } else {
-                rootView = inflater.inflate(R.layout.fragment_start_explore, container, false);
+            if (container == null) {
+                return null;
             }
+
+            View rootView = inflater.inflate(R.layout.fragment_choose_menu, container, false);
+            List<String> data = new ArrayList<String>();
+            List<RestaurantMenu> menuList = new ArrayList<RestaurantMenu>();
+            //phraseList = DashboardManager.getAllPhrase(getActivity().getApplication());
+            int sectionNumber = (int)this.getArguments().getInt(ARG_SECTION_NUMBER);
+            if(sectionNumber == 1) {
+                menuList = DashboardManager.getDietMenu(getActivity().getApplication());
+            } else if (sectionNumber == 2) {
+                menuList = DashboardManager.getOtherAlacarte(getActivity().getApplication());
+            } else {
+                menuList = DashboardManager.getEveryOtherItemFromMenu(getActivity().getApplication());
+            }
+
+            Context ctx = getActivity().getApplicationContext();
+            app = (App)ctx;
+            app.menuList = menuList;
+
+
+            MenuAdapter adapter = new MenuAdapter(this.getActivity(), app.menuList);
+            ListView listView = (ListView) rootView.findViewById(R.id.list);
+            listView.setAdapter(adapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> listView, View view,
+                                        int pos, long id) {
+                    Intent myintent=new Intent(getActivity(), DishDetailActivity.class);
+                    startActivity(myintent);
+                    TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                    toast((String) textView.getText());
+                }
+            });
             return rootView;
+        }
+
+        private void toast(String text) {
+            Toast.makeText(getActivity(),
+                    String.format("Item clicked: %s", text), Toast.LENGTH_SHORT)
+                    .show();
         }
     }
 
