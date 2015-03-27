@@ -1,27 +1,25 @@
-package com.sh.bite;
+package com.sh.bite.util;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.bite.R;
-import com.sh.bite.util.MyProfileActivity;
 
-public class MyMenuActivity extends Activity {
+public class MyProfileActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mymenu);
+        setContentView(R.layout.activity_my_profile);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_change_restaurant, menu);
+        getMenuInflater().inflate(R.menu.menu_my_profile, menu);
         return true;
     }
 
@@ -34,11 +32,8 @@ public class MyMenuActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, MyProfileActivity.class);
-            startActivityForResult(i, 1);
             return true;
         }
-
 
         return super.onOptionsItemSelected(item);
     }

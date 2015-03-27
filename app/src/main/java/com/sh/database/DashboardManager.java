@@ -46,13 +46,13 @@ public class DashboardManager {
         menuItem.setDishId(1);
         menuItem.setDishName("Large Israeli Salad");
         menuItem.setPrice(9.50);
-        menuItem.setDishTags("none");
+        menuItem.setDishTags("subtract yogurt");
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Oren's Fatush Salad");
         menuItem.setPrice(10.95);
-        menuItem.setDishTags("none");
+        menuItem.setDishTags("subtract feta");
         menuList.add(menuItem);
         return menuList;
     }
@@ -74,15 +74,26 @@ public class DashboardManager {
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Hummus Fava");
-        menuItem.setDishTags("Peanut");
+        menuItem.setDishTags("Vegan");
         menuItem.setPrice(9.50);
         menuList.add(menuItem);
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Vegetable Skewer");
-        menuItem.setDishTags("Vegetarian, Peanut");
+        menuItem.setDishTags("Vegan, GF");
         menuItem.setPrice(10.50);
         menuList.add(menuItem);
+
+        menuItem.setDishId(1);
+        menuItem.setDishName("Large Israeli Salad");
+        menuItem.setPrice(9.50);
+        menuItem.setDishTags("subtract yogurt");
+        menuList.add(menuItem);
+        menuItem = new RestaurantMenu();
+        menuItem.setDishId(1);
+        menuItem.setDishName("Oren's Fatush Salad");
+        menuItem.setPrice(10.95);
+        menuItem.setDishTags("subtract feta");
 
         return menuList;
     }

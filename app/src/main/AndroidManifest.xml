@@ -29,7 +29,6 @@
         <activity
             android:name="com.sh.bite.StartScreen"
             android:label="@string/title_activity_launcher" >
-
         </activity>
         <activity
             android:name="com.sh.bite.ChangeRestaurant"
@@ -69,6 +68,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sh.bite.util.MyProfileActivity"
+            android:label="@string/title_activity_my_profile" >
         </activity>
     </application>
 

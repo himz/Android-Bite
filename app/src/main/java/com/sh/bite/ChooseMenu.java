@@ -148,7 +148,7 @@ public class ChooseMenu extends Activity implements ActionBar.TabListener {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -157,9 +157,8 @@ public class ChooseMenu extends Activity implements ActionBar.TabListener {
             switch (position) {
                 case 0:
                     return getString(R.string.title_menu_section1).toUpperCase(l);
+
                 case 1:
-                    return getString(R.string.title_menu_section2).toUpperCase(l);
-                case 2:
                     return getString(R.string.title_menu_section3).toUpperCase(l);
             }
             return null;
@@ -199,7 +198,7 @@ public class ChooseMenu extends Activity implements ActionBar.TabListener {
             }
             int sectionNumber = (int)this.getArguments().getInt(ARG_SECTION_NUMBER);
             View rootView;
-            if(sectionNumber == 3) {
+            if(sectionNumber == 2) {
                 rootView = inflater.inflate(R.layout.fragment_choose_menu_full, container, false);
                 return rootView;
             } else {
@@ -210,9 +209,7 @@ public class ChooseMenu extends Activity implements ActionBar.TabListener {
 
             if(sectionNumber == 1) {
                 menuList = DashboardManager.getDietMenu(getActivity().getApplication());
-            } else if (sectionNumber == 2) {
-                menuList = DashboardManager.getOtherAlacarte(getActivity().getApplication());
-            } else {
+            }  else {
                 menuList = DashboardManager.getEveryOtherItemFromMenu(getActivity().getApplication());
             }
 

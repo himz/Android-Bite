@@ -63,18 +63,18 @@ public class MenuAdapter extends BaseAdapter {
             tv = (TextView) v.findViewById(android.R.id.text1);
             tvPrice = (TextView) v.findViewById(R.id.textView6);
             tvTags = (TextView) v.findViewById(R.id.textView8);
-            iv1 = (ImageView) v.findViewById(R.id.imageView1);
-            iv2 = (ImageView) v.findViewById(R.id.imageView2);
+//            iv1 = (ImageView) v.findViewById(R.id.imageView1);
+//            iv2 = (ImageView) v.findViewById(R.id.imageView2);
             itemMap.put(android.R.id.text1, tv);
-            itemMap.put(R.id.imageView1, iv1);
-            itemMap.put(R.id.imageView2, iv2);
+//            itemMap.put(R.id.imageView1, iv1);
+//            itemMap.put(R.id.imageView2, iv2);
             cache.put(v, itemMap);
         } else {
             tv = (TextView) itemMap.get(android.R.id.text1);
             tvPrice = (TextView) v.findViewById(R.id.textView6);
             tvTags = (TextView) v.findViewById(R.id.textView8);
-            iv1 = (ImageView) itemMap.get(R.id.imageView1);
-            iv2 = (ImageView) itemMap.get(R.id.imageView2);
+//            iv1 = (ImageView) itemMap.get(R.id.imageView1);
+//            iv2 = (ImageView) itemMap.get(R.id.imageView2);
         }
         RestaurantMenu restaurantMenuItem = (RestaurantMenu) getItem(position);
 
@@ -84,23 +84,23 @@ public class MenuAdapter extends BaseAdapter {
         tvPrice.setText(price);
         final String tags =  restaurantMenuItem.getDishTags();
         tvTags.setText(tags);
-        iv1.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,
-                        String.format("Image 1 clicked: %s", item),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        iv2.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,
-                        String.format("Image 2 clicked: %s", item),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+//        iv1.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,
+//                        String.format("Image 1 clicked: %s", item),
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        iv2.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,
+//                        String.format("Image 2 clicked: %s", item),
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return v;
     }
 }

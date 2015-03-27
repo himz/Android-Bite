@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bite.R;
+import com.sh.bite.util.MyProfileActivity;
 import com.sh.entities.RestaurantByDistance;
 import com.sh.helpers.App;
 
@@ -54,7 +55,7 @@ public class ChangeRestaurant extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, SettingsActivity.class);
+            Intent i = new Intent(this, MyProfileActivity.class);
             startActivityForResult(i, 1);
             return true;
         }
@@ -88,7 +89,7 @@ public class ChangeRestaurant extends Activity {
                                         int pos, long id) {
                     TextView textView = (TextView) view.findViewById(android.R.id.text1);
                     app.selectedRestaurantName = (String) textView.getText();
-//                    toast((String) textView.getText());
+                    toast((String) textView.getText());
 
                 }
             });
@@ -96,7 +97,7 @@ public class ChangeRestaurant extends Activity {
         }
         private void toast(String text) {
             Toast.makeText(getActivity(),
-                    String.format("Item clicked: %s", text), Toast.LENGTH_SHORT)
+                    String.format("Set restaurant to %s", text), Toast.LENGTH_SHORT)
                     .show();
         }
 

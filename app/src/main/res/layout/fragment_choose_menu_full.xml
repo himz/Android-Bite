@@ -38,8 +38,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Ask about these!"
+                android:text="Full Menu"
                 android:textStyle="italic"
+                android:textColor="@color/green"
                 android:id="@+id/textView6"
                 android:layout_alignTop="@+id/textView"
                 android:layout_marginBottom="10dp"
@@ -48,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="HUMMUS ENTREES"
                 android:id="@+id/textView5"
                 android:layout_above="@+id/ll1"
@@ -59,7 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Classic $8.95"
                 android:id="@+id/textView3"
                 android:layout_gravity="left" />
@@ -67,33 +68,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Chickpea $9.50"
                 android:id="@+id/textView4" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Fava $9.50"
                 android:id="@+id/tv5" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Triangle $9.50"
                 android:id="@+id/hu1" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Mushroom $9.95"
                 android:id="@+id/hu2" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus Beef $10.95"
                 android:id="@+id/hu3" />
 
@@ -101,7 +102,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="GRILLED ENTREES"
                 android:id="@+id/tv6"
                 android:layout_alignEnd="@+id/textView"
@@ -112,7 +113,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Vegetable Skewer $10.50"
                 android:id="@+id/ge1"
                 android:onClick="dishDetailPage"
@@ -121,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Chicken Skewer $10.50"
                 android:id="@+id/ge2"
                 android:onClick="dishDetailPage"
@@ -130,7 +131,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Beef Skewer $10.50"
                 android:id="@+id/ge3"
                 android:onClick="dishDetailPage"
@@ -139,7 +140,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Add an ala carte skewer; chicken 6.95, beef 6.95, vegetable 5.50"
                 android:id="@+id/ge4"
                 android:onClick="dishDetailPage"
@@ -150,7 +151,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="SALADS"
                 android:id="@+id/tv8"
                 android:layout_alignEnd="@+id/textView"
@@ -161,28 +162,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Large Israeli Salad $9.50"
                 android:id="@+id/tv9"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Greek  Salad $10.50"
                 android:id="@+id/tv10"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Oren's Fatush Salad $10.95"
                 android:id="@+id/tv11"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Apple Walnut Salad $10.50"
                 android:id="@+id/tv12"
                 android:layout_gravity="left" />
@@ -191,8 +192,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Pita Sandwiches"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="PITA SANDWICHES"
                 android:id="@+id/pi1"
                 android:layout_alignEnd="@+id/textView"
                 android:layout_marginBottom="5dp"
@@ -202,42 +203,42 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Falafel $8.95"
                 android:id="@+id/pi2"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Sabich $9.50"
                 android:id="@+id/pi3"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Chicken $10.95"
                 android:id="@+id/pi4"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Beef $10.95"
                 android:id="@+id/pi5"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Oren's $10.95"
                 android:id="@+id/pi6"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Hummus and Salad $8.25"
                 android:id="@+id/pi7"
                 android:layout_gravity="left" />

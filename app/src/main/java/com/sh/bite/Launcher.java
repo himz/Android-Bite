@@ -3,6 +3,7 @@ package com.sh.bite;
 import java.util.List;
 
 import com.example.bite.R;
+import com.sh.bite.util.MyProfileActivity;
 import com.sh.database.DashboardManager;
 import com.sh.entities.Restaurant;
 
@@ -67,7 +68,7 @@ public class Launcher extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, SettingsActivity.class);
+            Intent i = new Intent(this, MyProfileActivity.class);
             startActivityForResult(i, 1);
             return true;
         }

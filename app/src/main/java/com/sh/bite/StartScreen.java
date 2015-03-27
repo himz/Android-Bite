@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.bite.R;
+import com.sh.bite.util.MyProfileActivity;
 import com.sh.helpers.App;
 
 public class StartScreen extends Activity implements ActionBar.TabListener {
@@ -100,7 +101,7 @@ public class StartScreen extends Activity implements ActionBar.TabListener {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(this, SettingsActivity.class);
+            Intent i = new Intent(this, MyProfileActivity.class);
             startActivityForResult(i, 1);
             return true;
         }
