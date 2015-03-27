@@ -1,6 +1,7 @@
 package com.sh.bite;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,8 +33,11 @@ public class MyMenuActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivityForResult(i, 1);
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }

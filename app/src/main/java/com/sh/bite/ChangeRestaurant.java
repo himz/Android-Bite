@@ -54,8 +54,11 @@ public class ChangeRestaurant extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivityForResult(i, 1);
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
