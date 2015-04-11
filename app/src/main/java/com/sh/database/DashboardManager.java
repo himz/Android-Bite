@@ -65,18 +65,21 @@ public class DashboardManager {
         menuItem.setPrice(8.95);
         menuItem.setDishTags("Vegan, GF");
         menuList.add(menuItem);
+
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Hummus Chickpea");
         menuItem.setDishTags("Vegan");
         menuItem.setPrice(9.50);
         menuList.add(menuItem);
+
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Hummus Fava");
         menuItem.setDishTags("Vegan");
         menuItem.setPrice(9.50);
         menuList.add(menuItem);
+
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Vegetable Skewer");
@@ -84,16 +87,19 @@ public class DashboardManager {
         menuItem.setPrice(10.50);
         menuList.add(menuItem);
 
+        menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Large Israeli Salad");
         menuItem.setPrice(9.50);
         menuItem.setDishTags("subtract yogurt");
         menuList.add(menuItem);
+
         menuItem = new RestaurantMenu();
         menuItem.setDishId(1);
         menuItem.setDishName("Oren's Fatush Salad");
         menuItem.setPrice(10.95);
         menuItem.setDishTags("subtract feta");
+menuList.add(menuItem);
 
         return menuList;
     }

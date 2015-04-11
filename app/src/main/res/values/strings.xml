@@ -19,5 +19,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_my_profile"></string>
+    <string name="ingredients">salt, olive oil, black pepper, lime juice, dijon mustard, maple syrup, garlic, zucchini, cherry tomatoes, green bell peppers</string>
 
 </resources>
