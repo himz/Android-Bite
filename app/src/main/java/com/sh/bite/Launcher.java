@@ -3,11 +3,13 @@ package com.sh.bite;
 import java.util.List;
 
 import com.example.bite.R;
+import com.sh.bite.util.MyProfileActivity;
 import com.sh.database.DashboardManager;
 import com.sh.entities.Restaurant;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -65,9 +67,12 @@ public class Launcher extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+        if (id == R.id.action_settings) {
+            Intent i = new Intent(this, MyProfileActivity.class);
+            startActivityForResult(i, 1);
+            return true;
+        }
+
 		return super.onOptionsItemSelected(item);
 	}
 }
